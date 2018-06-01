@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tyj.game.dao.LabelDao">
+    <insert id="add" parameterType="Label">
+        INSERT INTO `tyj`.`youxi` (`image`,`content`,`status`,`cdate`,init) VALUES
+        (#{image}, #{content}, 0 , now() ,#{init});
+    </insert>
+<!--用户提交更新-->
+    <update id="update" parameterType="Label">
+        UPDATE youxi SET
+        <if test="content !=null">
+            content=#{content},
+        </if>
+        updatetime=now(),
+        status =#{status},uid=#{uid} WHERE id=#{id}
+    </update>
+    <!--管理员提交更新-->
+    <update id="adminupdate" parameterType="Label">
+        UPDATE youxi SET
+        <if test="content !=null">
+            content=#{content},
+        </if>
+        status =#{status} WHERE id=#{id}
+    </update>
+<!--或获取全部未取出图片数量-->
+    <select id="findTotal" resultType="int">
+        SELECT count(*) FROM youxi WHERE status =0
+    </select>
+    <!--获取全部未取出图片数量-->
+    <select id="adminfindTotal" resultType="int">
+        SELECT count(*) FROM youxi WHERE  uid=#{uid} and status =2
+    </select>
+    <!--获取全部未取出图片详情-->
+    <select id="findALl" resultType="Label">
+        SELECT content,id,image,status,init FROM youxi WHERE status=0
+    </select>
+    <!--获取全部未取出图片详情-->
+    <select id="adminfindALl" resultType="Label">
+        SELECT content,id,image,status,updatetime,init FROM youxi WHERE uid=#{uid} AND status=2
+    </select>
+    <select id="select" parameterType="Label" resultType="Label">
+      SELECT * FROM youxi WHERE id=#{id} AND content=#{content}
+    </select>
+
+    <select id="find" resultType="Label">
+        select  * from youxi where id =#{id}
+    </select>
+    <!--用户已完成数量-->
+    <select id="count" resultType="int">
+        select count(*) from youxi where uid=#{uid} and status=2 or status=3
+    </select>
+    <!--得分计算-->
+    <select id="getscore" resultType="int">
+        select count(*) from youxi where uid=#{uid} and status=2
+    </select>
+    <!--管理员已完审核数量-->
+    <select id="admincount" resultType="int">
+        select count(*) from youxi where uid=#{uid} and status=3
+    </select>
+    <select id="count0" resultType="int">
+        select count(*) from youxi where uid=#{uid} and status=0
+    </select>
+<!--查询正确数量-->
+    <select id="getCorrect" resultType="int">
+        select count (*) from youxi where uid=#{uid} and content = correct
+    </select>
+
+
+<!--埋题正确率计算-->
+    <select id="zhengquelv" resultType="Label">
+        select * from youxi where uid=#{uid} and status =2 or status=3
+    </select>
+
+    <select id="findById" resultType="Label">
+        select * from youxi where  id=#{id}
+    </select>
+    <select id="countTotal" resultType="int">
+        select count(*) from youxi
+    </select>
+    <select id="count123" resultType="int">
+        select count(*) from youxi where status=1 or status=2 or status=3
+    </select>
+</mapper>

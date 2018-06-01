@@ -1,0 +1,14 @@
+com/tyj/game/bean/Score.class
+com/tyj/game/dao/ScoreDao.class
+com/tyj/game/util/HttpClientUpload.class
+com/tyj/game/controller/FileController.class
+com/tyj/game/controller/AccountController.class
+com/tyj/game/service/AccountService.class
+com/tyj/game/util/JsonResult.class
+com/tyj/game/service/LabelService.class
+com/tyj/game/controller/LabelController.class
+com/tyj/game/dao/AccountDao.class
+com/tyj/game/GameApplication.class
+com/tyj/game/bean/Label.class
+com/tyj/game/bean/Account.class
+com/tyj/game/dao/LabelDao.class

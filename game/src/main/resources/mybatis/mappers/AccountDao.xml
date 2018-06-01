@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tyj.game.dao.AccountDao">
+	<insert id="register" parameterType="Account">
+        INSERT INTO `tyj`.`user` (`name`, `sex`, `phone`, `cdate`, `email`, `pwd`) VALUES
+        (#{name}, #{sex}, #{phone}, now(), #{email}, #{pwd});
+    </insert>
+<select id="select" parameterType="Account" resultType="Account">
+    SELECT * FROM user WHERE name = #{name} AND pwd =#{pwd}
+</select>
+
+    <select id="findByName" parameterType="string" resultType="Account">
+        SELECT * FROM user WHERE name =#{name}
+    </select>
+
+    <select id="findByUid" parameterType="int" resultType="Account">
+        select * from user where uid=#{uid}
+    </select>
+
+
+
+    <select id="users" resultType="Account">
+          select * from user where name!='admin'
+    </select>
+
+</mapper>

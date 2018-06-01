@@ -1,0 +1,14 @@
+/Users/beauty/IdeaProjects/game/src/main/java/com/tyj/game/service/AccountService.java
+/Users/beauty/IdeaProjects/game/src/main/java/com/tyj/game/bean/Account.java
+/Users/beauty/IdeaProjects/game/src/main/java/com/tyj/game/util/JsonResult.java
+/Users/beauty/IdeaProjects/game/src/main/java/com/tyj/game/controller/LabelController.java
+/Users/beauty/IdeaProjects/game/src/main/java/com/tyj/game/controller/AccountController.java
+/Users/beauty/IdeaProjects/game/src/main/java/com/tyj/game/GameApplication.java
+/Users/beauty/IdeaProjects/game/src/main/java/com/tyj/game/dao/LabelDao.java
+/Users/beauty/IdeaProjects/game/src/main/java/com/tyj/game/dao/AccountDao.java
+/Users/beauty/IdeaProjects/game/src/main/java/com/tyj/game/bean/Score.java
+/Users/beauty/IdeaProjects/game/src/main/java/com/tyj/game/dao/ScoreDao.java
+/Users/beauty/IdeaProjects/game/src/main/java/com/tyj/game/util/HttpClientUpload.java
+/Users/beauty/IdeaProjects/game/src/main/java/com/tyj/game/service/LabelService.java
+/Users/beauty/IdeaProjects/game/src/main/java/com/tyj/game/bean/Label.java
+/Users/beauty/IdeaProjects/game/src/main/java/com/tyj/game/controller/FileController.java
